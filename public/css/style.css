@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    height: 100vh;
+    width: 100%;
+    padding: 0 8%;
+    background: white
+    
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav h4{
+    font-size: 1.25em;
+}
+
+.nav-links{
+    padding: 28px 0;
+}
+.nav-links li{
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: black;
+    padding: 5px 0;
+    position: relative;
+
+   
+}
+
+.nav-links li a:hover{
+    color: yellow;
+    transition: 0.5s;
+}
+
+.btn{
+    background: yellow;
+    color: whitesmoke;
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: yellow;
+    color: black;
+    box-shadow: 3px 5px rgba(108, 122, 137,0.9);
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.container{
+    margin-top: 25vh;
+}
+.container h2{
+    font-size: 50px;
+}
+.button{
+    width: 20%;
+    margin-top: 30px;
+    
+    background: yellow;
+    border-radius: 10px;
+    padding: 10px 30px;
+
+}
+.button a{
+    text-decoration: none;
+    color: black;
+}
+.button a h3{
+    text-align: center;
+}
+
+.button:hover{
+    background: yellow;
+    border-radius: 10px;
+    box-shadow: 5px 10px rgba(108, 122, 137,0.9);
+    transition: 0.5s;
+    text-decoration: none;
+}
