@@ -1,135 +1,113 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <?php
-            include 'koneksi.php';
-            $q ='select * from user';
-            $result = mysqli_query($con,$q);
-        ?>
-        <script type="text/javascript">
-            function cek(){
-                alert("Angka Yang Paling Besar Adalah = " + Math.max(angka1.value, angka2.value, angka3.value));
-                var max = Math.max(angka1.value, angka2.value, angka3.value)
-                document.getElementById("hasil").value = max
-            }
-        </script>
-        <title>Login || Stand.in</title>
-        <body>
-            <style>
-                *{
-                    margin: 0;
-                    padding: 0;
-                    box-sizing: border-box;
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-                }
-                body{
-                    display: flex;
-                    height: 100vh;
-                    justify-content: center;
-                    align-items: center;
-                    padding: 10px;
-                    background: linear-gradient(135deg, #ff4c4c, #3c2ff8) ;
-                }
-                .title{
-                    font-weight: 500;
-                    font-size: 25px;
-                    margin-bottom: 30px;
-                }
-                .container{
-                    max-width: 800px;
-                    width: 100%;
-                    background: #fff;
-                    padding: 25px 30px;
-                    border-radius: 5px;
-                }
-                .title{
-                    font-size: 35px;
-                    font-weight: 500;
-                    position: relative;
-                }
-                .title::before{
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    bottom: 0;
-                    height: 3px;
-                    width: 24px;
-                    background: linear-gradient(135deg, #ff4c4c, #3c2ff8) ;
-                }
-                .input{
-                    height: 45px;
-                    width: 300px;
-                    margin: 5px 0 25px 200px;
-                    padding-left: 20px;
-                }
-                .text-style{
-                    margin-left: 200px;
-                    font-weight: bold;
-                    font-size: 19px;
-                    
-                }
-                .button{
-                    margin-top: 30px;
-                    margin-bottom: 30px;
-                    height: 70px;
-                    width: 300px;
-                    border-radius: 10px;
-                    font-weight: bold;
-                    background: linear-gradient(135deg, #07a302, #60ff6d) ;
-                }
-                .lihat{
-                    margin-top: 30px;
-                    margin-bottom: 30px;
-                    height: 70px;
-                    width: 300px;
-                    border-radius: 10px;
-                    font-weight: bold;
-                    background: linear-gradient(135deg, #ff0404, #ff5640) ;
-                } 
-                .table-input{
-                    margin-left: auto;
-                    margin-right: auto;
-                    text-align: center;
-                }
-                .row{
-                    padding-left: 10px;
-                    padding-right: 10px;
-                }
-            </style>
-            <div class="container">
-                <form action="test.php" method="POST">
-                    <p class="title">
-                        <b>Login</b>
-                    </p>
-                    <p>
-                        <div class="text-style">
-                            Username / Email
-                        </div>
-                        <input type="text" class="input" id="username" required autofocus>
-                    </p>
-                    <p>
-                        <div class="text-style">
-                            Password
-                        </div>
-                        <input type="text" class="input" id="pass" required>
-                    </p>
-                    <p>
-                        <div class="text-style">
-                            Belum punya akun ? <a href="/register.php">Daftar Dulu</a>
-                        </div>
-                    </p>
-                    <table class="table-input">
-                        <tr>
-                            <td class="row">
-                                <input type="button" class="button" name="cari" value="Login" onclick="cek()"> 
-                            </td>
-                            <td class="row">
-                                <input type="button" class="lihat" name="lihat" value="Tampilkan Password">
-                            </td>
-                        </tr>
-                    </table>
+
+<head>
+    <title>Login StandIn</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+        * {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 520px;
+            background: lightgray;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+        
+        div.register {
+            margin-top: 70px;
+            background-color: #FAFAFA;
+            width: 100%;
+            font-size: 15px;
+            border-radius: 10px;
+            border: 1px;
+        }
+        
+        .pointer {
+            cursor: pointer;
+        }
+        
+        form#regist {
+            margin: 40px;
+            font-size: 20;
+        }
+        
+        input#details {
+            width: 300px;
+            border: 1px solid gray;
+            border-radius: 3px;
+            outline: 0;
+            padding: 7px;
+        }
+        
+        input#details:hover {
+            width: 300px;
+            border: 2px solid black;
+            transition: 0.5s;
+        }
+        
+        input#submit {
+            width: 300px;
+            padding: 7px;
+            border: 1px;
+            font-weight: 600;
+            font-size: 20;
+            background: #46fa49;
+            border-radius: 3px;
+        }
+        
+        input#submit:hover {
+            background: #88ff8a;
+        }
+        
+        .label {
+            font-weight: bold;
+        }
+
+        #forgot {
+            padding: 7px;
+            border: 1px;
+            font-weight: 500;
+            font-size: 15;
+            border-radius: 3px;
+            background-color: fafafa;
+            margin: auto;
+            display: flex;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="register">
+            <br>
+            <h2>LOGIN</h2>
+            <form id="regist">
+                <label>Username</label>
+                <br>
+                <input type="text" placeholder="Masukkan username anda" id="details" required>
+                <br><br>
+                <label>Password</label>
+                <br>
+                <input type="password" placeholder="Masukkan password anda" id="details" required>
+                <br><br><br>
+                <input type="submit" value="Login" id="submit" class="pointer">
+                <br><br>
+                <input type="button" value="Lupa password?" id="forgot" class="pointer" onclick="location.href='lupa_password.php';">
+                <br><hr><br>
+                <input type="button" value="Buat Akun Baru" id="submit" class="pointer" onclick="location.href='registrasi-standin.html';">
+                <br><br>
             </form>
-            </div>
-        </body>
-    </head>
-</html>
+        </div>
+    </div>
+</body>
+<!html>

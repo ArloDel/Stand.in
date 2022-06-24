@@ -23,9 +23,8 @@ $result = mysqli_query($con, $q);
             <ul class="nav-links">
                 <li><a href="">About</a></li>
                 <li><a href="">Contacts</a></li>
-                <li class="btn">
-                    Sign Up
-                </li>
+                <li class="btn"><a href="signup.php">Sign Up</a></li>
+                <li class="btn"><a href="login.php">Log In</a></li>
             </ul>
         </nav>
 
@@ -35,7 +34,7 @@ $result = mysqli_query($con, $q);
             <h2>Cari tenant<br>
                 dengan mudah</h2>
             <div class="button">
-                <a href="#">
+                <a href="login.php">
                     <h3>Sewa Sekarang</h3>
                 </a>
             </div>
