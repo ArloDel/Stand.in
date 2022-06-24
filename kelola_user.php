@@ -32,7 +32,7 @@
                 <?php echo $error ?>
             </div>
         <?php
-            header("refresh:5;url=index.php");// refresh halaman data user
+            header("refresh:5;url=kelola_user.php");// refresh halaman data user
         }
         ?>
         <?php
@@ -42,7 +42,7 @@
                 <?php echo $sukses ?>
             </div>
         <?php
-            header("refresh:5;url=index.php");
+            header("refresh:5;url=kelola_user.php");
         }
         ?>
 
@@ -117,8 +117,8 @@
                                 <td scope="row"><?= $notelp ?></td>
                                 <td scope="row"><?= $alamat ?></td>
                                 <td scope="row">
-                                    <!-- <a href="index.php?op=edit&id= php echo $id "><button type="button" class="btn btn-warning">Edit</button></a> -->
-                                    <a href="index.php?op=delete&id=<?php echo $id ?>" onclick="return confirm('Konfirmasi hapus data ?')"><button type="button" class="btn btn-danger">Delete</button></a>
+                                    <!-- <a href="kelola_user.php?op=edit&id= php echo $id "><button type="button" class="btn btn-warning">Edit</button></a> -->
+                                    <a href="kelola_user.php?op=delete&id=<?php echo $id ?>" onclick="return confirm('Konfirmasi hapus data ?')"><button type="button" class="btn btn-danger">Delete</button></a>
                                 </td>
                             </tr>
                         <?php

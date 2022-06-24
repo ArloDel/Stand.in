@@ -15,16 +15,27 @@
         $op = "";
     }
 
-    // if ($op == 'delete') {
-    //     $id         = $_GET['id'];
-    //     $sqldelete  = "delete from stand where id_stand = '$id'";
-    //     $qdelete    = mysqli_query($conn, $sqldelete);
-    //     if ($qdelete) {
-    //         $sukses = "Data berhasil dihapus";
-    //     } else {
-    //         $error  = "Data gagal dihapus!";
-    //     }
-    // }
+    if ($op == 'tolak') {
+        $id         = $_GET['id'];
+        $sqltolak  = "delete from stand where id_stand = '$id'";
+        $qtolak    = mysqli_query($conn, $sqltolak);
+        if ($qtolak) {
+            $sukses = "Data berhasil ditolak";
+        } else {
+            $error  = "Data gagal ditolak!";
+        }
+    }
+
+    if ($op == 'verifikasi') {
+        $id         = $_GET['id'];
+        $sqlverifikasi  = "insert into stand (STATUS) values ('Verified') where id_stand = '$id'";
+        $qverifikasi    = mysqli_query($conn, $sqlverifikasi);
+        if ($qverifikasi) {
+            $sukses = "Data berhasil diverifikasi";
+        } else {
+            $error  = "Data gagal diverifikasi!";
+        }
+    }
 
     if ($error) {
         ?>
@@ -32,7 +43,7 @@
                 <?php echo $error ?>
             </div>
         <?php
-            header("refresh:5;url=index.php");// refresh halaman data user
+            header("refresh:5;url=verifikasi_stand.php");// refresh halaman data user
         }
         ?>
         <?php
@@ -42,7 +53,7 @@
                 <?php echo $sukses ?>
             </div>
         <?php
-            header("refresh:5;url=index.php");
+            header("refresh:5;url=verifikasi_stand.php");
         }
         ?>
 
@@ -97,7 +108,7 @@
                         </tr>
                     <tbody>
                         <?php
-                        $sqlread = "select * from stand where status = null order by id_stand asc";
+                        $sqlread = "select * from stand where status IS NULL order by id_stand asc";
                         $qread = mysqli_query($conn, $sqlread);
                         $urut = 1;
 
@@ -117,8 +128,8 @@
                                 <td scope="row"><?= $ukuran ?></td>
                                 <td scope="row"><?= $harga ?></td>
                                 <td scope="row">
-                                    <!-- <a href="index.php?op=edit&id= php echo $id "><button type="button" class="btn btn-warning">Edit</button></a> -->
-                                    <a href="index.php?op=verifikasi&id=<?php echo $id ?>" onclick="return confirm('Konfirmasi verifikasi stand ?')"><button type="button" class="btn btn-danger">Verifikasi</button></a>
+                                    <a href="verifikasi_stand.php?op=tolak&id=<?php echo $id ?>" onclick="return confirm('Tolak verifikasi stand ?')"><button type="button" class="btn btn-danger">Tolak</button></a>
+                                    <a href="verifikasi_stand.php?op=verifikasi&id=<?php echo $id ?>" onclick="return confirm('Konfirmasi verifikasi stand ?')"><button type="button" class="btn btn-success">Verifikasi</button></a>
                                 </td>
                             </tr>
                         <?php
