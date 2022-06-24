@@ -14,7 +14,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 520px;
+            height: 650px;
             background: lightgray;
         }
         
@@ -99,7 +99,7 @@
                 <label>Password</label>
                 <br>
                 <input type="password" placeholder="Masukkan password anda" id="details" required>
-                <br><br><br>
+                <br><br><br><br>
                 <input type="submit" value="Login" id="submit" class="pointer">
                 <br><br>
                 <input type="button" value="Lupa password?" id="forgot" class="pointer" onclick="location.href='lupa_password.php';">
