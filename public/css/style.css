@@ -90,3 +90,10 @@ nav h4{
     transition: 0.5s;
     text-decoration: none;
 }
+
+img {
+    float: right;
+    width: 80vh;
+    display: flex;
+         
+  }

@@ -28,8 +28,11 @@ $result = mysqli_query($con, $q);
             </ul>
         </nav>
 
-        <div class="container">
+        <div id="img">
+            <img src="public/img/foto_stand.jpg"><br>
+        </div>
 
+        <div class="container">
             <h7>cari tenant impianmu</h7>
             <h2>Cari tenant<br>
                 dengan mudah</h2>
@@ -40,6 +43,7 @@ $result = mysqli_query($con, $q);
             </div>
 
         </div>
+
 
 
     </div>
