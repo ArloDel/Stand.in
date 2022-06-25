@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../public/css/style.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,14 +32,14 @@
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="#">
+                <a href="kelola_user.php">
                     <i class='bx bx-user'></i>
                     <span class="links_name">Kelola User</span>
                 </a>
                 <span class="tooltip">User</span>
             </li>
             <li>
-                <a href="c://wamp64/www/stand.in/verifikasi_stand.php">
+                <a href="verifikasi_stand.php">
                     <i class='bx bx-chat'></i>
                     <span class="links_name">Verifikasi Stand</span>
                 </a>
