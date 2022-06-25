@@ -5,7 +5,7 @@
     $foto       = "";
     $judul      = "";
     $ukuran     = "";
-    $harga    = "";
+    $harga      = "";
     $sukses     = "";
     $error      = "";
 
@@ -28,7 +28,8 @@
 
     if ($op == 'verifikasi') {
         $id         = $_GET['id'];
-        $sqlverifikasi  = "insert into stand (STATUS) values ('Verified') where id_stand = '$id'";
+        // $sqlverifikasi  = "insert into stand ('STATUS') values ('Verified') where id_stand = '$id'";
+        $sqlverifikasi  = "update stand set STATUS = 'Verified' where id_stand = '$id'";
         $qverifikasi    = mysqli_query($conn, $sqlverifikasi);
         if ($qverifikasi) {
             $sukses = "Data berhasil diverifikasi";
@@ -113,7 +114,7 @@
                         $urut = 1;
 
                         while ($read = mysqli_fetch_array($qread)) {
-                            $id = $read['ID_USER'];
+                            $id = $read['ID_STAND'];
                             $foto = $read['FOTO_STAND'];
                             $judul = $read['JUDUL'];
                             $ukuran = $read['UKURAN'];
