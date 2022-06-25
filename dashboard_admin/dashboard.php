@@ -39,7 +39,7 @@
                 <span class="tooltip">User</span>
             </li>
             <li>
-                <a href="#">
+                <a href="c://wamp64/www/stand.in/verifikasi_stand.php">
                     <i class='bx bx-chat'></i>
                     <span class="links_name">Verifikasi Stand</span>
                 </a>
