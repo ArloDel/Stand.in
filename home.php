@@ -1,7 +1,5 @@
 <?php
 include 'koneksi.php';
-$q = 'select * from user';
-$result = mysqli_query($con, $q);
 ?>
 
 <!DOCTYPE html>
