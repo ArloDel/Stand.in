@@ -121,7 +121,7 @@ $result = mysqli_query($conn, $q);
         </div>
         <div class= "form-border">
         <div class= "form-upload">
-        <form action="/proses_upload.php">
+        <form action="/proses_upload.php" method= post;>
             <h2>Judul</h2>
             <input type="text" id="judul" name="judul" placeholder="Judul iklan" maxlength="50" autofocus required>
             <h2>Deskripsi</h2>
