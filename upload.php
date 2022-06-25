@@ -92,16 +92,6 @@ $result = mysqli_query($conn, $q);
         input:out-of-range {
         border:2px solid red;
         }
-        /* Untuk menghilangkan tombol panah pada input type number (chrome, edge)*/
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-        /* Untuk menghilangkan tombol panah pada input type number (firefox) */
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
     </style>
 </head>
 
@@ -144,9 +134,9 @@ $result = mysqli_query($conn, $q);
             </select>
             <h2 class="block">Ukuran</h2>
             <p><strong>Contoh: </strong>3 x 3 Meter </p>
-            <input type="number" class="input-ukuran" id="ukuran1" name="ukuran1" pattern="[0-9]" min="1" max="999" onkeypress="return inputangka(event)" required>
+            <input type="text" class="input-ukuran" id="ukuran1" name="ukuran1" pattern="[0-9]" maxlength="4" onkeypress="return inputangka(event)" required>
             <label> X </label>
-            <input type="number" class="input-ukuran" id="ukuran2" name="ukuran2" pattern="[0-9]" min="1" max="999" onkeypress="return inputangka(event)" required>
+            <input type="text" class="input-ukuran" id="ukuran2" name="ukuran2" pattern="[0-9]" maxlength="4" onkeypress="return inputangka(event)" required>
             <label> Meter </label>
             <h2 class="block">Alamat</h2>
             <input type="text" id="alamat" name="alamat" placeholder="Alamat lengkap stand" maxlength="50" required>
