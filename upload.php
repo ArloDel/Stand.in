@@ -153,5 +153,5 @@ $result = mysqli_query($conn, $q);
         </div>
     </div>
 </body>
-<script src="js/myscript.js"></script>
+<script src="public/js/myscript.js"></script>
 </html>
