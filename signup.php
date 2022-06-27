@@ -102,38 +102,38 @@
         <div class="register">
             <br>
             <h2>REGISTRASI</h2>
-            <form id="regist">
+            <form action ="" method= "post" id="regist">
                 <label>Nama</label>
                 <br>
-                <input type="text" placeholder="Masukkan nama lengkap anda" id="details" required>
+                <input type="text" name = "nama" placeholder="Masukkan nama lengkap anda" id="details" required>
                 <br><br>
                 <label>Email</label>
                 <br>
-                <input type=email placeholder="Masukkan email aktif anda" id="details" required>
+                <input type=email name="email" placeholder="Masukkan email aktif anda" id="details" required>
                 <br><br>
                 <label>Username</label>
                 <br>
-                <input type="text" placeholder="Masukkan username anda" id="details" required>
+                <input type="text" name="username" placeholder="Masukkan username anda" id="details" required>
                 <br><br>
                 <label>Password</label>
                 <br>
-                <input type="password" placeholder="Masukkan password anda" id="details" required>
+                <input type="password" name="password"placeholder="Masukkan password anda" id="details" required>
                 <br><br>
                 <label>No Telp</label>
                 <br>
 
-                <input type="text" placeholder="Nomor telepon aktif anda" id="telp" required>
+                <input type="text" name="telp" placeholder="Nomor telepon aktif anda" id="telp" required>
                 <br><br>
                 <label>Alamat</label>
                 <br>
-                <input type="text" placeholder="Alamat anda" id="telp" required>
+                <input type="text" name="alamat" placeholder="Alamat anda" id="telp" required>
                 <br><br>
 
 
                 <input type="checkbox" name="setuju" required>
                 <span style="font-size:14px">Saya telah mengisi data dengan benar</span>
                 <br><br>
-                <input type="submit" id="submit" class="pointer">
+                <input name ="adduser"type="submit" id="submit" class="pointer">
                 <br><br>
                 <input type="reset" id="reset" value="Kosongkan Form" class="pointer">
                 <br>
@@ -142,4 +142,21 @@
         </div>
     </div>
 </body>
-<!html>
+<?php
+
+
+    include '../koneksi.php';
+if(isset($_POST['adduser'])){
+    $id_user ="";
+    $nama_user =$_POST['nama'];
+    $email_user =$_POST['email'];
+    $username_user =$_POST['username'];
+    $password_user =$_POST['password'];
+    $no_telp_user =$_POST['telp'];
+    $alamat_user =$_POST['alamat'];
+    
+     $tambahuser = mysqli_query($conn, "insert into user (ID_USER, NAMA_USER, EMAIL_USER, USERNAME_USER, PASSWORD_USER, NO_TELP_USER, ALAMAT_USER) values('$id_user','$nama_user','$email_user','$username_user','$password_user','$no_telp_user','$alamat_user')");
+}
+
+?>
+</html>
