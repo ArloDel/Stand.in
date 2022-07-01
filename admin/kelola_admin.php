@@ -33,7 +33,7 @@ if ($error) {
         <?php echo $error ?>
     </div>
 <?php
-    header("refresh:5;url=kelola_admin.php"); // refresh halaman data user
+    header("refresh:3;url=kelola_admin.php"); // refresh halaman data user
 }
 ?>
 
@@ -44,27 +44,39 @@ if ($sukses) {
         <?php echo $sukses ?>
     </div>
 <?php
-    header("refresh:5;url=kelola_admin.php");
+    header("refresh:3;url=kelola_admin.php");
 }
 
-if (isset($_POST['addadmin'])) {
-    $id = $_POST['ID_ADMIN'];
-    $nama = $_POST['NAMA_ADMIN'];
-    $email = $_POST['EMAIL_ADMIN'];
-    $username = $_POST['USERNAME_ADMIN'];
-    $password = password_hash($_POST['PASSWORD-ADMIN'], PASSWORD_DEFAULT);
 
-    $tambahadmin = mysqli_query($conn, "insert into admin values('$id','$nama','$email','$username','$password')");
+// auto increment buat id_admin
+$autoincrement = mysqli_query($conn, "select max(id_admin) as max_id from admin");
+$data = mysqli_fetch_array($autoincrement);
+$id = $data['max_id'];
+$urut = (int)substr($id, 3, 3);
+$urut++;
+$huruf = "ADM";
+$id_admin = $huruf . sprintf("%03s", $urut);
+
+if (isset($_POST['addadmin'])) {
+    $nama = $_POST['nama'];
+    $email = $_POST['email'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $tambahadmin = mysqli_query($conn, "insert into admin (ID_ADMIN, NAMA_ADMIN, EMAIL_ADMIN, USERNAME_ADMIN, PASSWORD_ADMIN) 
+                                values('$id_admin','$nama','$email','$username','$password')");
     if ($tambahadmin) {
-        echo " <div class='alert alert-success'>
+        echo " 
+        <div class='alert alert-success' role='alert' style='text-align:center ;'>
 			Berhasil menambahkan admin baru.
-		  </div>
-		<meta http-equiv='refresh' content='1; url= user.php'/>  ";
+		</div>
+		<meta http-equiv='refresh' content='3; url= kelola_admin.php'/>  ";
     } else {
-        echo "<div class='alert alert-warning'>
-			Gagal menambahkan staff baru.
-		  </div>
-		 <meta http-equiv='refresh' content='1; url= user.php'/> ";
+        echo "
+        <div class='alert alert-danger' role='alert' style='text-align:center ;'>
+			Gagal menambahkan admin baru.
+		</div>
+		<meta http-equiv='refresh' content='3; url= kelola_admin.php'/> ";
     }
 };
 ?>
@@ -272,12 +284,10 @@ if (isset($_POST['addadmin'])) {
                 <div class="modal-body">
                     <form method="post">
                         <div class="form-group">
-                            <label>ID Admin</label>
-                            <input name="idadmin" type="text" class="form-control" required autofocus>    
                             <label>Nama Admin</label>
-                            <input name="namaadmin" type="text" class="form-control" required autofocus>
+                            <input name="nama" type="text" class="form-control" required autofocus>
                             <label>Email</label>
-                            <input name="email" type="text" class="form-control" required autofocus>    
+                            <input name="email" type="text" class="form-control" required autofocus>
                             <label>Username</label>
                             <input name="username" type="text" class="form-control" required autofocus>
                             <label>Password</label>
@@ -287,13 +297,13 @@ if (isset($_POST['addadmin'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                    <input name="addcategory" type="submit" class="btn btn-primary" value="Tambah">
+                    <input name="addadmin" type="submit" class="btn btn-primary" value="Tambah">
                 </div>
                 </form>
             </div>
         </div>
     </div>
-    
+
     <script>
         $(document).ready(function() {
             $('#dataTable3').DataTable({

@@ -45,7 +45,7 @@ if ($error) {
         <?php echo $error ?>
     </div>
 <?php
-    header("refresh:5;url=verifikasi.php"); // refresh halaman data user
+    header("refresh:3;url=verifikasi.php"); // refresh halaman data user
 }
 ?>
 <?php
@@ -55,7 +55,7 @@ if ($sukses) {
         <?php echo $sukses ?>
     </div>
 <?php
-    header("refresh:5;url=verifikasi.php");
+    header("refresh:3;url=verifikasi.php");
 }
 ?>
 

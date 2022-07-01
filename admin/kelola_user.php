@@ -33,7 +33,7 @@ if ($error) {
         <?php echo $error ?>
     </div>
 <?php
-    header("refresh:5;url=kelola_user.php"); // refresh halaman data user
+    header("refresh:3;url=kelola_user.php"); // refresh halaman data user
 }
 ?>
 
@@ -44,7 +44,7 @@ if ($sukses) {
         <?php echo $sukses ?>
     </div>
 <?php
-    header("refresh:5;url=kelola_user.php");
+    header("refresh:3;url=kelola_user.php");
 }
 ?>
 
