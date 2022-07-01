@@ -106,7 +106,7 @@ if( isset($_POST["submit"]) ){
         form .gambar-upload{
             margin-top: 20px;
             position: absolute;
-            align: right;
+            align-items: right;
             width:250px;
             height:250px;
             border-radius:5%;
@@ -151,12 +151,12 @@ if( isset($_POST["submit"]) ){
     <div class="header">
         <nav>
             <h4>Standin</h4>
-            <ul class="nav-links">
+            <!-- <ul class="nav-links">
                 <li><a href="">About</a></li>
                 <li><a href="">Contacts</a></li>
                 <li class="btn"><a href="signup.php">Sign Up</a></li>
                 <li class="btn"><a href="login.php">Log In</a></li>
-            </ul>
+            </ul> -->
         </nav>
         <div class="title-upload">
             <h2>Upload Stand</h2>
