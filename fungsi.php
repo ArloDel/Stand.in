@@ -96,7 +96,7 @@ function tambah($data){
         echo "
             <script>
                 alert('Upload stand berhasil !!, iklan anda akan ditampilkan setelah admin melakukan verifikasi!');
-                document.location.href = 'home.php';
+                document.location.href = 'homepage.php';
             </script>
         ";
     }else {
