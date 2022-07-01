@@ -23,8 +23,8 @@ $result = mysqli_query($conn, $q);
             <ul class="nav-links">
                 <li><a href="">About</a></li>
                 <li><a href="">Contacts</a></li>
-                <li class="btn"><a href="signup.php">Sign Up</a></li>
-                <li class="btn"><a href="login.php">Log In</a></li>
+                <li class="btn"><a href="signup.php">Upload</a></li>
+                <li class="btn"><a href="login.php">Kelola</a></li>
             </ul>
         </nav>
 
