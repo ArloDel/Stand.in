@@ -10,8 +10,7 @@ include 'koneksi.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/style.css" type="text/css">
-    <title>Home <Stand class="in"></Stand>
-    </title>
+    <title>Stand.in Website</title>
 </head>
 
 <body>
@@ -19,8 +18,8 @@ include 'koneksi.php';
         <nav>
             <h4>Standin</h4>
             <ul class="nav-links">
-                <li><a href="about_us.php">About</a></li>
-                <li><a href="contact.php">Contacts</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contacts</a></li>
                 <li class="btn"><a href="signup.php">Sign Up</a></li>
                 <li class="btn"><a href="login.php">Log In</a></li>
             </ul>
