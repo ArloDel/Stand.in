@@ -26,7 +26,7 @@ include 'koneksi.php';
         </nav>
 
         <div id="img">
-            <img src="public/img/foto_stand.jpg"><br>
+            <img src="public/img/foto_stand.jpg" class="img-home"><br>
         </div>
 
         <div class="container">
