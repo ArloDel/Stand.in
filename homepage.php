@@ -49,7 +49,7 @@ $result = mysqli_query($conn, $q);
             ?>
                 <div class="recom-hover">
 
-                    <a href="#">
+                    <a href="detail_stand.php?id=<?php echo $row['ID_STAND']; ?>">
                         <div class="recom-item">
                             <div class="recom-grup">
                                 <h4><?php echo $row['JUDUL']; ?></h4>
