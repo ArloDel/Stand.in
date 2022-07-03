@@ -1,6 +1,12 @@
 <?php
 include 'koneksi.php';
 
+session_start();
+//cek apakah user sudah login 
+if(!isset($_SESSION["Login"])){
+    header('Location:login.php');
+}
+
 //query select table stand
 $id = $_GET['id'];
 $q = "select * from stand where ID_STAND='$id'";
