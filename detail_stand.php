@@ -1,9 +1,6 @@
 <?php
 include 'koneksi.php';
 
-//memanggil method fungsi
-require 'fungsi.php';
-
 //query select table stand
 $id = $_GET['id'];
 $q = "select * from stand where ID_STAND='$id'";
