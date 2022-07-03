@@ -100,7 +100,6 @@ function tambah($data){
             </script>
         ";
     }else {
-        var_dump($_POST); die;
         echo "
             <script>
                 alert('Upload stand gagal :( Harap coba lagi');
