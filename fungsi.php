@@ -47,14 +47,7 @@ function tambah($data){
     if(!$gambar){
         return false;
     }
-    $getidstand = "SELECT ID_STAND from stand";
-    $q = mysqli_query($conn, $getidstand);
-    $jumlah = 1;
-    while ($id = mysqli_fetch_array($q)){
-        $jumlah++;
-    }
     
-
     // mengambil id_stand yang paling besar
     $query = mysqli_query($conn, "SELECT max(ID_STAND) as IDTerbesar FROM stand");
     $standid = mysqli_fetch_array($query);
