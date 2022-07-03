@@ -47,7 +47,7 @@ function tambah($data){
     if(!$gambar){
         return false;
     }
-    
+
     // mengambil id_stand yang paling besar
     $query = mysqli_query($conn, "SELECT max(ID_STAND) as IDTerbesar FROM stand");
     $standid = mysqli_fetch_array($query);
@@ -67,7 +67,11 @@ function tambah($data){
     $kode = "STD";
     $ID_STAND = $kode . sprintf("%03s", $urutan);
 
-    $ID_USER="USR001"; //tes saja
+    //ambil username user dari $_Session
+    $username = $_SESSION["Login"];
+    $user = mysqli_query($conn, "SELECT ID_USER FROM user where USERNAME_USER='$username'");
+    $datauser = mysqli_fetch_array($user);
+    $ID_USER= $datauser['ID_USER'];
 
     $judul=$data["judul"];
     $desk=$data["deskripsi"];
