@@ -1,5 +1,10 @@
 <?php
 session_start();
+//cek apakah user sudah login 
+if(!isset($_SESSION["Login"])){
+    header('Location:login.php');
+}
+
 include 'koneksi.php';
 
 $id_stand   = "";
@@ -146,7 +151,13 @@ if ($sukses) {
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $brgs = mysqli_query($conn, "SELECT * from stand WHERE ID_USER = 'USR002' order by ID_STAND ASC");
+                                            //ambil username user dari $_Session
+                                            $username = $_SESSION["Login"];
+                                            $user = mysqli_query($conn, "SELECT ID_USER FROM user where USERNAME_USER='$username'");
+                                            $datauser = mysqli_fetch_array($user);
+                                            $iduser = $datauser['ID_USER'];
+                                            //ambil data stand berdasarkan id user
+                                            $brgs = mysqli_query($conn, "SELECT * from stand WHERE ID_USER = '$iduser' order by ID_STAND ASC");
                                             $no = 1;
                                             while ($p = mysqli_fetch_array($brgs)) {
                                                 $id_stand = $p['ID_STAND'];
