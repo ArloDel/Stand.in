@@ -1,3 +1,31 @@
+<?php
+include 'koneksi.php';
+if (isset($_POST['Login'])) {
+    $username_admin = $_POST['username_admin'];
+    $password_admin = $_POST['password_admin'];
+    // echo ($username_admin;
+
+    $validasi = mysqli_query($conn, "SELECT * FROM ADMIN WHERE USERNAME_ADMIN = '$username_admin'");
+    // $data = mysqli_fetch_array($validasi);
+    // // $id = $data[];
+    // var_dump($id);
+    // var_dump($data);
+
+    if (mysqli_num_rows($validasi) === 1) {
+        //cek password
+        $row = mysqli_fetch_array($validasi);
+        if ($password_admin === $row["PASSWORD_ADMIN"]) {
+            header("location: admin/index.php");
+            session_start();
+            $_SESSION['Login'] = $username_admin;
+        }
+    }
+}
+
+
+?>
+
+
 <html>
 
 <head>
@@ -95,19 +123,20 @@
         <div class="register">
             <br>
             <h2>LOGIN</h2>
-            <form id="regist">
+            <form id="regist" method="post" action="">
                 <label>Username</label>
                 <br>
-                <input type="text" placeholder="Masukkan username anda" id="details" required>
+                <input type="text" name="username_admin" placeholder="Masukkan username anda" id="details" required>
                 <br><br>
                 <label>Password</label>
                 <br>
-                <input type="password" placeholder="Masukkan password anda" id="details" required>
+                <input type="password" name="password_admin" placeholder="Masukkan password anda" id="details" required>
                 <br><br>
-                <input type="submit" value="Login" id="submit" class="pointer">
+                <input name="Login" type="submit" value="Login" id="submit" class="pointer">
                 <br><br>
 
                 <h5>Log As Admin</h5>
+                <br><br>
             </form>
         </div>
     </div>
