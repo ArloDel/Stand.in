@@ -155,7 +155,7 @@ if ($sukses) {
                                         $datauser = mysqli_fetch_array($user);
                                         $iduser = $datauser['ID_USER'];
                                         //ambil data stand berdasarkan id user
-                                        $brgs = mysqli_query($conn, "SELECT * from stand WHERE ID_USER = '$iduser' order by ID_STAND ASC");
+                                        $brgs = mysqli_query($conn, "SELECT * from stand WHERE ID_USER = '$iduser' AND status like 'Verified' ORDER BY ID_STAND ASC");
                                         $no = 1;
                                         while ($p = mysqli_fetch_array($brgs)) {
                                             $id_stand = $p['ID_STAND'];
