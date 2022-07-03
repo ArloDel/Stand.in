@@ -36,7 +36,7 @@
                 <br>
                     <b>Developed By : </b> <br> M Alfian <br> M Rangga <br> M Alif Nur <br> Muhammad Adam R <br> Abiyoga Dwi Permana <br> Bagas Tarangga <br></h7>
             <div class="button">
-                <a href="home.php">
+                <a href="index.php">
                     <h3>Yuk jadi mitra kami</h3>
                     
                 </a>
