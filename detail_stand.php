@@ -37,7 +37,7 @@ $user = mysqli_fetch_array($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/index.css" type="text/css">
-    <title>Home <Stand class="in"></Stand>
+    <title>Stand.in | Homepage
     </title>
 
     <style>
@@ -129,8 +129,8 @@ $user = mysqli_fetch_array($result);
             <ul class="nav-links">
                 <li><a href="">About</a></li>
                 <li><a href="">Contacts</a></li>
-                <li class="btn"><a href="signup.php">Sign Up</a></li>
-                <li class="btn"><a href="login.php">Log In</a></li>
+                <li class="btn"><a href="upload.php">Upload</a></li>
+                <li class="btn"><a href="kelola.php">Kelola</a></li>
             </ul>
         </nav>
     </div>
