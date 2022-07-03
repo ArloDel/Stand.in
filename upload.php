@@ -1,9 +1,9 @@
 <?php
 session_start();
-// cek apakah user sudah login 
-// if(!isset($_SESSION["login"])){
-//     header('Location:login.php');
-// }
+//cek apakah user sudah login 
+if(!isset($_SESSION["Login"])){
+    header('Location:login.php');
+}
 
 include 'koneksi.php';
 $q = 'select * from user';
@@ -239,5 +239,4 @@ if( isset($_POST["submit"]) ){
 </body>
 <script src="public/js/myscript.js"></script>
 </html>
-
 
