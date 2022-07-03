@@ -1,6 +1,6 @@
 <?php
 session_start();
-// cek apakah user sudah login
+// cek apakah user sudah login 
 // if(!isset($_SESSION["login"])){
 //     header('Location:login.php');
 // }
