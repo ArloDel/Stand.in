@@ -1,19 +1,24 @@
 <?php
-
+include 'koneksi.php';
 if (isset($_POST['Login'])) {
     $username_user = $_POST['username_user'];
     $password_user = $_POST['password_user'];
     // echo ($username_user);
 
-    $validasi = mysqli_query($conn, "SELECT * FROM USER WHERE USERNAME_USER = '$username_user' AND PASSWORD_USER = '$password_user'");
+    $validasi = mysqli_query($conn, "SELECT * FROM USER WHERE USERNAME_USER = '$username_user'");
     // $data = mysqli_fetch_array($validasi);
     // // $id = $data[];
     // var_dump($id);
     // var_dump($data);
 
-    if (mysqli_num_rows($validasi) == 1) {
-        echo ('onok');
-        header("refresh:1;url=login.php");
+    if (mysqli_num_rows($validasi) === 1) {
+        //cek password
+        $row = mysqli_fetch_array($validasi);
+        if ($password_user === $row["PASSWORD_USER"]) {
+            header("location: homepage.php");
+            session_start();
+            $_SESSION['Login'] = $username_user;
+        }
     }
 }
 
@@ -114,7 +119,7 @@ if (isset($_POST['Login'])) {
         <div class="register">
             <br>
             <h2>LOGIN</h2>
-            <form id="regist">
+            <form id="regist" method="post" action="">
                 <label>Username</label>
                 <br>
                 <input type="text" name="username_user" placeholder="Masukkan username anda" id="details" required>
