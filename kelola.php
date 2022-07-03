@@ -1,7 +1,7 @@
 <?php
 session_start();
 //cek apakah user sudah login 
-if(!isset($_SESSION["Login"])){
+if (!isset($_SESSION["Login"])) {
     header('Location:login.php');
 }
 
@@ -102,96 +102,94 @@ if ($sukses) {
     <!-- preloader area end -->
     <!-- page container area start -->
     <!-- <div class="page-container"> -->
-        <!-- sidebar menu area start -->
-        <!-- sidebar menu area end -->
-        <!-- main content area start -->
-        <div class="main-content">
-            <!-- header area start -->
-            <div class="header-area">
-                <div class="row align-items-center">
-                    <!-- nav and search button -->
-                    <div class="col-md-6 col-sm-8 clearfix">
-                        <div class="nav-btn pull-left">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
+    <!-- sidebar menu area start -->
+    <!-- sidebar menu area end -->
+    <!-- main content area start -->
+    <div class="main-content">
+        <!-- header area start -->
+        <div class="header-area">
+            <div class="row align-items-center">
+                <!-- nav and search button -->
+                <div class="col-md-6 col-sm-8 clearfix">
+                    <div class="nav-btn pull-left">
+                        <a href="homepage.php"><button type="button" class="btn btn-dark">Kembali</button></a>
                     </div>
-                    <!-- profile info & task notification -->
-                    
                 </div>
+                <!-- profile info & task notification -->
+
             </div>
+        </div>
 
 
-            <!-- page title area end -->
-            <div class="main-content-inner">
+        <!-- page title area end -->
+        <div class="main-content-inner">
 
-                <!-- market value area start -->
-                <div class="row mt-5 mb-5">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-sm-flex justify-content-between align-items-center">
-                                    <h2>Daftar Standmu</h2>
-                                </div><br>
-                                <div class="data-tables datatable-dark">
-                                    <table id="dataTable3" class="display" style="width:100%">
-                                        <thead class="thead-dark">
+            <!-- market value area start -->
+            <div class="row mt-5 mb-5">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-sm-flex justify-content-between align-items-center">
+                                <h2>Daftar Standmu</h2>
+                            </div><br>
+                            <div class="data-tables datatable-dark">
+                                <table id="dataTable3" class="display" style="width:100%">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>ID Stand</th>
+                                            <th>Foto</th>
+                                            <th>Judul</th>
+                                            <th>Deskripsi</th>
+                                            <th>Ukuran</th>
+                                            <th>Harga</th>
+                                            <th>Alamat</th>
+                                            <th>Pilih Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        //ambil username user dari $_Session
+                                        $username = $_SESSION["Login"];
+                                        $user = mysqli_query($conn, "SELECT ID_USER FROM user where USERNAME_USER='$username'");
+                                        $datauser = mysqli_fetch_array($user);
+                                        $iduser = $datauser['ID_USER'];
+                                        //ambil data stand berdasarkan id user
+                                        $brgs = mysqli_query($conn, "SELECT * from stand WHERE ID_USER = '$iduser' order by ID_STAND ASC");
+                                        $no = 1;
+                                        while ($p = mysqli_fetch_array($brgs)) {
+                                            $id_stand = $p['ID_STAND'];
+
+                                        ?>
+
                                             <tr>
-                                                <th>No.</th>
-                                                <th>ID Stand</th>
-                                                <th>Foto</th>
-                                                <th>Judul</th>
-                                                <th>Deskripsi</th>
-                                                <th>Ukuran</th>
-                                                <th>Harga</th>
-                                                <th>Alamat</th>
-                                                <th>Pilih Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            //ambil username user dari $_Session
-                                            $username = $_SESSION["Login"];
-                                            $user = mysqli_query($conn, "SELECT ID_USER FROM user where USERNAME_USER='$username'");
-                                            $datauser = mysqli_fetch_array($user);
-                                            $iduser = $datauser['ID_USER'];
-                                            //ambil data stand berdasarkan id user
-                                            $brgs = mysqli_query($conn, "SELECT * from stand WHERE ID_USER = '$iduser' order by ID_STAND ASC");
-                                            $no = 1;
-                                            while ($p = mysqli_fetch_array($brgs)) {
-                                                $id_stand = $p['ID_STAND'];
-
-                                            ?>
-
-                                                <tr>
-                                                    <td><?php echo $no++ ?></td>
-                                                    <td><?php echo $p['ID_STAND'] ?></td>
-                                                    <td><?php echo $p['FOTO_STAND'] ?></td>
-                                                    <td><?php echo $p['JUDUL'] ?></td>
-                                                    <td><?php echo $p['DESKRIPSI'] ?></td>
-                                                    <td><?php echo $p['UKURAN'] ?></td>
-                                                    <td><?php echo $p['HARGA_STAND'] ?></td>
-                                                    <td><?php echo $p['ALAMAT'] ?></td>
-                                                    <td>
+                                                <td><?php echo $no++ ?></td>
+                                                <td><?php echo $p['ID_STAND'] ?></td>
+                                                <td><?php echo $p['FOTO_STAND'] ?></td>
+                                                <td><?php echo $p['JUDUL'] ?></td>
+                                                <td><?php echo $p['DESKRIPSI'] ?></td>
+                                                <td><?php echo $p['UKURAN'] ?></td>
+                                                <td><?php echo $p['HARGA_STAND'] ?></td>
+                                                <td><?php echo $p['ALAMAT'] ?></td>
+                                                <td>
                                                     <a href="kelola_detail.php?id=<?php echo $id_stand ?>"><button type="button" class="btn btn-danger">Detail</button></a>
                                                 </td>
-                                                </tr>
+                                            </tr>
 
-                                            <?php
-                                            }
+                                        <?php
+                                        }
 
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                        ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- row area start-->
         </div>
+        <!-- row area start-->
+    </div>
     </div>
     <!-- main content area end -->
     <!-- footer area start-->
