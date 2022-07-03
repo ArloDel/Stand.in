@@ -4,12 +4,13 @@
     <title>Login Admin StandIn</title>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
         * {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
         }
-        
+
         body {
             display: flex;
             justify-content: center;
@@ -17,13 +18,15 @@
             height: 650px;
             background: lightgray;
         }
-        
+
         h2 {
             text-align: center;
         }
+
         h5 {
             text-align: center;
         }
+
         div.register {
             margin-top: 70px;
             background-color: #FAFAFA;
@@ -32,16 +35,16 @@
             border-radius: 10px;
             border: 1px;
         }
-        
+
         .pointer {
             cursor: pointer;
         }
-        
+
         form#regist {
             margin: 40px;
             font-size: 20;
         }
-        
+
         input#details {
             width: 300px;
             border: 1px solid gray;
@@ -49,13 +52,13 @@
             outline: 0;
             padding: 7px;
         }
-        
+
         input#details:hover {
             width: 300px;
             border: 2px solid black;
             transition: 0.5s;
         }
-        
+
         input#submit {
             width: 300px;
             padding: 7px;
@@ -65,11 +68,11 @@
             background: #46fa49;
             border-radius: 3px;
         }
-        
+
         input#submit:hover {
             background: #88ff8a;
         }
-        
+
         .label {
             font-weight: bold;
         }
@@ -84,7 +87,6 @@
             margin: auto;
             display: flex;
         }
-
     </style>
 </head>
 

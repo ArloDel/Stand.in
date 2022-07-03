@@ -1,15 +1,39 @@
+<?php
+
+if (isset($_POST['Login'])) {
+    $username_user = $_POST['username_user'];
+    $password_user = $_POST['password_user'];
+    // echo ($username_user);
+
+    $validasi = mysqli_query($conn, "SELECT * FROM USER WHERE USERNAME_USER = '$username_user' AND PASSWORD_USER = '$password_user'");
+    // $data = mysqli_fetch_array($validasi);
+    // // $id = $data[];
+    // var_dump($id);
+    // var_dump($data);
+
+    if (mysqli_num_rows($validasi) == 1) {
+        echo ('onok');
+        header("refresh:1;url=login.php");
+    }
+}
+
+
+?>
+
+
 <html>
 
 <head>
     <title>Login StandIn</title>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
         * {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
         }
-        
+
         body {
             display: flex;
             justify-content: center;
@@ -17,11 +41,11 @@
             height: 650px;
             background: lightgray;
         }
-        
+
         h2 {
             text-align: center;
         }
-        
+
         div.register {
             margin-top: 70px;
             background-color: #FAFAFA;
@@ -30,16 +54,16 @@
             border-radius: 10px;
             border: 1px;
         }
-        
+
         .pointer {
             cursor: pointer;
         }
-        
+
         form#regist {
             margin: 40px;
             font-size: 20;
         }
-        
+
         input#details {
             width: 300px;
             border: 1px solid gray;
@@ -47,13 +71,13 @@
             outline: 0;
             padding: 7px;
         }
-        
+
         input#details:hover {
             width: 300px;
             border: 2px solid black;
             transition: 0.5s;
         }
-        
+
         input#submit {
             width: 300px;
             padding: 7px;
@@ -63,11 +87,11 @@
             background: #46fa49;
             border-radius: 3px;
         }
-        
+
         input#submit:hover {
             background: #88ff8a;
         }
-        
+
         .label {
             font-weight: bold;
         }
@@ -82,7 +106,6 @@
             margin: auto;
             display: flex;
         }
-
     </style>
 </head>
 
@@ -94,16 +117,17 @@
             <form id="regist">
                 <label>Username</label>
                 <br>
-                <input type="text" placeholder="Masukkan username anda" id="details" required>
+                <input type="text" name="username_user" placeholder="Masukkan username anda" id="details" required>
                 <br><br>
                 <label>Password</label>
                 <br>
-                <input type="password" placeholder="Masukkan password anda" id="details" required>
+                <input type="password" name="password_user" placeholder="Masukkan password anda" id="details" required>
                 <br><br><br><br>
-                <input type="submit" value="Login" id="submit" class="pointer">
+                <input name="Login" type="submit" value="Login" id="submit" class="pointer">
                 <br><br>
                 <input type="button" value="Lupa password?" id="forgot" class="pointer" onclick="location.href='lupa_password.php';">
-                <br><hr><br>
+                <br>
+                <hr><br>
                 <input type="button" value="Buat Akun Baru" id="submit" class="pointer" onclick="location.href='registrasi-standin.html';">
                 <br><br>
             </form>
