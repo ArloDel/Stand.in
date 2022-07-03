@@ -1,4 +1,10 @@
 <?php
+session_start();
+//cek apakah user sudah login 
+if(!isset($_SESSION["Login"])){
+    header('Location:login.php');
+}
+
 include 'koneksi.php';
 $q = 'select * from stand where STATUS = "Verified"';
 $result = mysqli_query($conn, $q);
