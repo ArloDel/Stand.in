@@ -1,6 +1,6 @@
 <?php
 include 'koneksi.php';
-$q = 'select * from stand';
+$q = 'select * from stand where STATUS = "Verified"';
 $result = mysqli_query($conn, $q);
 ?>
 
@@ -21,7 +21,7 @@ $result = mysqli_query($conn, $q);
         <nav>
             <h4>Standin</h4>
             <ul class="nav-links">
-                <li><a href="">About</a></li>
+                <li><a href="about_us.php">About</a></li>
                 <li><a href="contact.php">Contacts</a></li>
                 <li class="btn"><a href="upload.php">Upload</a></li>
                 <li class="btn"><a href="kelola.php">Kelola</a></li>
