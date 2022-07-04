@@ -140,7 +140,6 @@ if ($sukses) {
                                             <th>ID Stand</th>
                                             <th>Foto</th>
                                             <th>Judul</th>
-                                            <th>Deskripsi</th>
                                             <th>Ukuran</th>
                                             <th>Harga</th>
                                             <th>Alamat</th>
@@ -167,7 +166,6 @@ if ($sukses) {
                                                 <td><?php echo $p['ID_STAND'] ?></td>
                                                 <td><img src="img/<?php echo $p['FOTO_STAND']; ?>" style="width: 200px;"></img></td>
                                                 <td><?php echo $p['JUDUL'] ?></td>
-                                                <td><?php echo $p['DESKRIPSI'] ?></td>
                                                 <td><?php echo $p['UKURAN'] ?></td>
                                                 <td><?php echo $p['HARGA_STAND'] ?></td>
                                                 <td><?php echo $p['ALAMAT'] ?></td>
