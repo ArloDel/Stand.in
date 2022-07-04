@@ -164,7 +164,7 @@ if ($sukses) {
                                             <tr>
                                                 <td><?php echo $no++ ?></td>
                                                 <td><?php echo $p['ID_STAND'] ?></td>
-                                                <td><img src="img/<?php echo $p['FOTO_STAND']; ?>" style="width: 200px;"></img></td>
+                                                <td><img src="img/<?php echo $p['FOTO_STAND']; ?>" style="width: 200px; height:200px;"></img></td>
                                                 <td><?php echo $p['JUDUL'] ?></td>
                                                 <td><?php echo $p['UKURAN'] ?></td>
                                                 <td><?php echo $p['HARGA_STAND'] ?></td>

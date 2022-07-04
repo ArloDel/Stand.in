@@ -221,7 +221,7 @@ if ($sukses) {
                                                 <tr>
                                                     <th scope="row"><?= $urut++ ?></th>
                                                     <td scope="row"><?= $id ?></td>
-                                                    <td scope="row"><?= $foto ?></td>
+                                                    <td scope="row"><img src="../img/<?= $foto ?>" style="width: 200px; height: 200px;"></img></td>
                                                     <td scope="row"><?= $judul ?></td>
                                                     <td scope="row"><?= $ukuran ?></td>
                                                     <td scope="row"><?= $harga ?></td>
