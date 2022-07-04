@@ -187,6 +187,7 @@ if ($sukses) {
         <nav>
             <h4>Standin</h4>
             <ul class="nav-links">
+                <li class="btn" style="background: black;"><a style="color: white;" href="kelola.php" >< Kelola</a></li>
                 <li class="btn" style="background: red;"><a style="color: white;" href="kelola_detail.php?op=delete&id=<?php echo $id ?>" onclick="return confirm('Hapus data stand ?')">Hapus</a></li>
             </ul>
         </nav>

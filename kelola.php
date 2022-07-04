@@ -112,7 +112,7 @@ if ($sukses) {
                 <!-- nav and search button -->
                 <div class="col-md-6 col-sm-8 clearfix">
                     <div class="nav-btn pull-left">
-                        <a href="homepage.php"><button type="button" class="btn btn-dark">Kembali</button></a>
+                        <a href="homepage.php"><button type="button" class="btn btn-dark">< Homepage</button></a>
                     </div>
                 </div>
                 <!-- profile info & task notification -->
@@ -172,7 +172,7 @@ if ($sukses) {
                                                 <td><?php echo $p['HARGA_STAND'] ?></td>
                                                 <td><?php echo $p['ALAMAT'] ?></td>
                                                 <td>
-                                                    <a href="kelola_detail.php?id=<?php echo $id_stand ?>"><button type="button" class="btn btn-warning">Detail</button></a>
+                                                    <a href="kelola_detail.php?id=<?php echo $id_stand ?>"><button type="button" class="btn btn-warning">Detail ></button></a>
                                                 </td>
                                             </tr>
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
 //cek apakah user sudah login 
-if(!isset($_SESSION["Login"])){
+if (!isset($_SESSION["Login"])) {
     header('Location:login.php');
 }
 
@@ -27,6 +27,8 @@ $result = mysqli_query($conn, $q);
         <nav>
             <h4>Standin</h4>
             <ul class="nav-links">
+                <li><a href="about_us.php">About</a></li>
+                <li><a href="contact.php">Contacts</a></li>
                 <li class="btn"><a href="upload.php">Upload</a></li>
                 <li class="btn"><a href="kelola.php">Kelola</a></li>
                 <li class="btn"><a href="logout.php">Logout</a></li>

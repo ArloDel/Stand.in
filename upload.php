@@ -153,8 +153,7 @@ if( isset($_POST["submit"]) ){
         <nav>
             <h4>Standin</h4>
             <ul class="nav-links">
-                <li><a href="">About</a></li>
-                <li><a href="">Contacts</a></li>
+                <li class="btn" style="background: black;"><a style="color: white;" href="homepage.php" >< Homepage</a></li>
                 <li class="btn"><a href="upload.php">Upload</a></li>
                 <li class="btn"><a href="kelola.php">Kelola</a></li>
             </ul>
