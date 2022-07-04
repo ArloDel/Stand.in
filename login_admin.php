@@ -29,7 +29,7 @@ if (isset($_POST['Login'])) {
 <html>
 
 <head>
-    <title>Login Admin StandIn</title>
+    <title>Login Admin | Stand.in</title>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 

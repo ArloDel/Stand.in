@@ -40,7 +40,7 @@ $user = mysqli_fetch_array($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/index.css" type="text/css">
-    <title>Stand.in | Homepage
+    <title>Detail Stand | Stand.in
     </title>
 
     <style>

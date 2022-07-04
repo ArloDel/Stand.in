@@ -66,7 +66,7 @@ if ($sukses) {
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="../favicon.png">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Kelola Stand - Stand.in</title>
+    <title>Kelola Stand | Stand.in</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="admin/assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="admin/assets/css/bootstrap.min.css">
@@ -172,7 +172,7 @@ if ($sukses) {
                                                 <td><?php echo $p['HARGA_STAND'] ?></td>
                                                 <td><?php echo $p['ALAMAT'] ?></td>
                                                 <td>
-                                                    <a href="kelola_detail.php?id=<?php echo $id_stand ?>"><button type="button" class="btn btn-danger">Detail</button></a>
+                                                    <a href="kelola_detail.php?id=<?php echo $id_stand ?>"><button type="button" class="btn btn-warning">Detail</button></a>
                                                 </td>
                                             </tr>
 
