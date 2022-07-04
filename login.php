@@ -130,7 +130,6 @@ if (isset($_POST['Login'])) {
                 <br><br><br><br>
                 <input name="Login" type="submit" value="Login" id="submit" class="pointer">
                 <br><br>
-                <br>
                 <hr><br>
                 <input type="button" value="Buat Akun Baru" id="submit" class="pointer" onclick="location.href='signup.php';">
                 <br><br>
